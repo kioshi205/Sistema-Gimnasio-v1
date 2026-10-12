@@ -1,0 +1,1 @@
+INSERT INTO socio (nombre, correo) VALUES ('Juan Perez', 'juan@mail.com');

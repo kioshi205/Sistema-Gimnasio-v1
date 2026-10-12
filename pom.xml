@@ -30,33 +30,58 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
 
-		<!-- Motor para interpretar archivos JSP en el Tomcat embebido -->
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-		</dependency>
+			<!-- Spring MVC + Tomcat embebido (controller, service, etc.) -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+			</dependency>
 
-		<!-- Soporte para etiquetas JSTL (Específico para Spring Boot 3+ / Java 17) -->
-		<dependency>
-			<groupId>jakarta.servlet.jsp.jstl</groupId>
-			<artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.web</groupId>
-			<artifactId>jakarta.servlet.jsp.jstl</artifactId>
-		</dependency>
+			<!-- Motor que ejecuta los JSP -->
+			<dependency>
+				<groupId>org.apache.tomcat.embed</groupId>
+				<artifactId>tomcat-embed-jasper</artifactId>
+			</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+			<!-- JSTL: API + implementación (etiquetas <c:forEach>, <c:if>, etc.) -->
+			<dependency>
+				<groupId>jakarta.servlet.jsp.jstl</groupId>
+				<artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.glassfish.web</groupId>
+				<artifactId>jakarta.servlet.jsp.jstl</artifactId>
+			</dependency>
+
+			<!-- JdbcTemplate, DataSource, HikariCP y ejecución de schema.sql / data.sql -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-jdbc</artifactId>
+			</dependency>
+
+			<!-- Base de datos H2 -->
+			<dependency>
+				<groupId>com.h2database</groupId>
+				<artifactId>h2</artifactId>
+				<scope>runtime</scope>
+			</dependency>
+
+			<!-- Reinicio automático al programar (opcional) -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-devtools</artifactId>
+				<optional>true</optional>
+			</dependency>
+
+			<!-- Pruebas (opcional) -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-test</artifactId>
+				<scope>test</scope>
+			</dependency>
+
+		</dependencies>
+
 
 	<build>
 		<plugins>
