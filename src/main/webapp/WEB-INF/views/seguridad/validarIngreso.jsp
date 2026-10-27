@@ -10,35 +10,24 @@
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background: #12141a;
-            color: #f2f4f8;
+            background: #ffffff;
+            color: #111827;
         }
-        /* Barra superior de seguridad */
-        .topbar {
-            background: #1b1e27;
-            padding: 14px 24px;
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            border-bottom: 2px solid #262a36;
-        }
-        .topbar .logo { font-weight: bold; color: #4da3ff; font-size: 18px; }
-        .topbar .item { color: #9aa3b2; font-size: 15px; }
-        .topbar .item.activo { color: #ffffff; font-weight: bold; }
-        .ruta { padding: 12px 24px; color: #7d8798; font-size: 13px; }
+        .ruta { padding: 12px 24px; color: #9ca3af; font-size: 13px; }
 
-        /* Panel central minimalista */
+        /* Panel central */
         .panel {
             max-width: 560px;
             margin: 40px auto;
-            background: #1b1e27;
-            border: 1px solid #262a36;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
             border-radius: 12px;
             padding: 32px;
             text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
         .panel h1 { margin: 0 0 6px 0; font-size: 22px; }
-        .panel .ayuda { margin: 0 0 24px 0; color: #7d8798; font-size: 13px; }
+        .panel .ayuda { margin: 0 0 24px 0; color: #6b7280; font-size: 13px; }
 
         .campo {
             width: 100%;
@@ -46,13 +35,13 @@
             font-size: 28px;
             text-align: center;
             letter-spacing: 4px;
-            border: 2px solid #2f3543;
+            border: 2px solid #d1d5db;
             border-radius: 10px;
-            background: #0e1015;
-            color: #ffffff;
+            background: #ffffff;
+            color: #111827;
             outline: none;
         }
-        .campo:focus { border-color: #4da3ff; }
+        .campo:focus { border-color: #2563eb; }
 
         .boton {
             width: 100%;
@@ -62,41 +51,38 @@
             font-weight: bold;
             border: none;
             border-radius: 10px;
-            background: #4da3ff;
-            color: #0e1015;
+            background: #2563eb;
+            color: #ffffff;
             cursor: pointer;
         }
-        .boton:hover { background: #6fb5ff; }
+        .boton:hover { background: #1d4ed8; }
 
         /* Respuesta visual: verde permitido / rojo denegado */
         .resultado {
             margin-top: 24px;
-            padding: 24px;
+            padding: 20px;
             border-radius: 10px;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
+            border-left: 5px solid transparent;
         }
         .resultado span { display: block; margin-top: 8px; font-size: 16px; font-weight: normal; }
-        .resultado.permitido { background: #1e7d43; color: #ffffff; }
-        .resultado.denegado { background: #a32121; color: #ffffff; }
-        .resultado.aviso { background: #2a2f3c; color: #c9cfda; font-size: 18px; }
+        .resultado.permitido { background: #ecfdf3; color: #166534; border-left-color: #16a34a; }
+        .resultado.denegado { background: #fef2f2; color: #991b1b; border-left-color: #dc2626; }
+        .resultado.aviso { background: #f8fafc; color: #475569; border-left-color: #94a3b8; font-size: 18px; }
     </style>
 </head>
-<body>
+<body class="pagina-validar">
 
-<div class="topbar">
-    <span class="logo">GYM</span>
-    <span class="item">Seguridad</span>
-    <span class="item activo">Validar Ingreso</span>
-</div>
+<jsp:include page="topbar.jsp"/>
 
-<div class="ruta">Topbar Seguridad &gt; Validar Ingreso</div>
+<div class="ruta">Topbar Seguridad &gt; Control de Acceso &gt; Validar Ingreso</div>
 
 <main class="panel">
     <h1>Control de Acceso por DNI</h1>
     <p class="ayuda">F19: Validar Ingreso por DNI</p>
 
-    <form method="post" action="${pageContext.request.contextPath}/seguridad/validar">
+    <form method="post" action="/seguridad/validar">
         <input class="campo"
                id="dni"
                name="dni"

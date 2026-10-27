@@ -17,6 +17,18 @@ public class seguridadController {
         this.seguridad_Service = seguridad_Service;
     }
 
+    // Pagina principal del dashboard de seguridad
+    @GetMapping("/seguridad/inicio")
+    public String mostrarInicio() {
+        return "/seguridad/inicio";
+    }
+
+    // Si entran a /seguridad, tambien se muestra la pagina principal
+    @GetMapping("/seguridad")
+    public String mostrarInicioCorto() {
+        return "/seguridad/inicio";
+    }
+
     // Muestra el dashboard del personal de seguridad (F19: Validar Ingreso)
     @GetMapping("/seguridad/validar")
     public String mostrarValidarIngreso(Model model) {
