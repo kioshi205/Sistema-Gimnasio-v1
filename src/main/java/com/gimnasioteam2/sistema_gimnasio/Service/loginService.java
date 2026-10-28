@@ -6,4 +6,6 @@ public class loginService {
     public String obtenerMensajeBienvenida() {
         return "¡Hola! Los datos vienen desde el Servicio hacia la vista JSP.";
     }
+
+
 }

@@ -22,6 +22,11 @@ public class loginController {
 
         return "/login/loginViews";
     }
+    @GetMapping("/hola")
+    public String mostrarHola(Model model) {
+        model.addAttribute("mensajeVista", "¡Hola, mundo!");
+        return "/login/holaViews";
+    }
 }
 
 
