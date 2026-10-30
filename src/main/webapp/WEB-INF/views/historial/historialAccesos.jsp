@@ -648,20 +648,6 @@
 </head>
 <body>
 
-<header class="barra-superior">
-    <div class="marca">
-        <span class="marca-icono">G</span>
-        <span>GymTeam</span>
-    </div>
-    <div class="barra-derecha">
-        <nav class="nav-modulo">
-            <a href="${pageContext.request.contextPath}/acceso">Consulta</a>
-            <a class="activo" href="${pageContext.request.contextPath}/historial">Historial</a>
-        </nav>
-        <span class="distintivo">Módulo Seguridad</span>
-    </div>
-</header>
-
 <main class="contenedor">
     <div class="encabezado">
         <div>
@@ -817,16 +803,6 @@
             </c:otherwise>
         </c:choose>
     </section>
-
-    <div class="nota">
-        <span class="nota-icono">&#9432;</span>
-        <span>
-            <strong>Historial de solo lectura.</strong>
-            Los registros de MARCACION_ACCESO no se editan ni se eliminan. Cada consulta realizada en la pantalla de acceso se agrega automáticamente.
-        </span>
-    </div>
-
-    <p class="pie">Sistema de Gimnasio &middot; Historial de accesos (F33)</p>
 </main>
 
 </body>

@@ -659,27 +659,6 @@
 </head>
 <body>
 
-<header class="barra-superior">
-    <div class="marca">
-        <span class="marca-icono">G</span>
-        <span>GymTeam</span>
-    </div>
-    <div class="barra-derecha">
-        <nav class="nav-modulo">
-            <a class="activo" href="${pageContext.request.contextPath}/acceso">Consulta</a>
-            <a href="${pageContext.request.contextPath}/historial">Historial</a>
-        </nav>
-        <span class="distintivo">Módulo Seguridad</span>
-        <div class="guardia">
-            <span class="guardia-avatar">S</span>
-            <div>
-                <strong><c:out value="${nombreGuardia}"/></strong>
-                <span>Personal de Seguridad</span>
-            </div>
-        </div>
-    </div>
-</header>
-
 <main class="contenedor">
     <div class="encabezado">
         <h1>Consulta de acceso</h1>
@@ -737,11 +716,10 @@
         </form>
     </section>
 
-    <div class="separador">Resultado</div>
+    <c:if test="${not empty resultado}">
+        <div class="separador">Resultado</div>
 
-    <c:choose>
-        <c:when test="${not empty resultado}">
-            <section class="resultado ${resultado.permitido ? 'permitido' : 'denegado'}">
+        <section class="resultado ${resultado.permitido ? 'permitido' : 'denegado'}">
                 <div class="resultado-cabecera">
                     <div class="resultado-icono">
                         <c:choose>
@@ -812,38 +790,7 @@
                     </div>
                 </div>
             </section>
-        </c:when>
-        <c:otherwise>
-            <section class="estado-vacio">
-                <h2>¿Cómo se evalúa el acceso?</h2>
-                <p>La consulta se resuelve en este orden y se detiene en la primera verificación que falle.</p>
-                <ol class="pasos">
-                    <li class="paso">
-                        <span class="paso-numero">1</span>
-                        <strong>DNI registrado</strong>
-                        <span>El documento debe existir en la base de clientes.</span>
-                    </li>
-                    <li class="paso">
-                        <span class="paso-numero">2</span>
-                        <strong>Cliente activo</strong>
-                        <span>El cliente no debe estar dado de baja.</span>
-                    </li>
-                    <li class="paso">
-                        <span class="paso-numero">3</span>
-                        <strong>Suscripción vigente</strong>
-                        <span>La fecha actual debe estar dentro del periodo pagado.</span>
-                    </li>
-                    <li class="paso">
-                        <span class="paso-numero">4</span>
-                        <strong>Sede permitida</strong>
-                        <span>Debe estar en su sede base o tener acceso total.</span>
-                    </li>
-                </ol>
-            </section>
-        </c:otherwise>
-    </c:choose>
-
-    <p class="pie">Sistema de Gimnasio &middot; Control de acceso en puerta (F32)</p>
+    </c:if>
 </main>
 
 <script>

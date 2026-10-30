@@ -321,14 +321,6 @@
 </head>
 <body>
 
-<header class="barra-superior">
-    <div class="marca">
-        <span class="marca-icono">G</span>
-        <span>GymTeam</span>
-    </div>
-    <span class="distintivo">Módulo Administrador</span>
-</header>
-
 <main class="contenedor">
     <div class="encabezado">
         <div>
@@ -392,17 +384,6 @@
             </table>
         </div>
     </section>
-
-    <div class="nota">
-        <span class="nota-icono">&#9432;</span>
-        <span>
-            <strong>Roles fijos del sistema.</strong>
-            Los perfiles Administrador, Recepcionista y Seguridad no se crean ni se eliminan.
-            Solo es posible modificar su descripción (máximo 150 caracteres).
-        </span>
-    </div>
-
-    <p class="pie">Sistema de Gimnasio &middot; Gestión de roles (F20 / F21)</p>
 </main>
 
 </body>

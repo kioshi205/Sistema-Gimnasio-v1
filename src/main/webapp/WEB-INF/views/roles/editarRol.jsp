@@ -340,14 +340,6 @@
 </head>
 <body>
 
-<header class="barra-superior">
-    <div class="marca">
-        <span class="marca-icono">G</span>
-        <span>GymTeam</span>
-    </div>
-    <span class="distintivo">Módulo Administrador</span>
-</header>
-
 <main class="contenedor">
     <a class="volver" href="${pageContext.request.contextPath}/roles">
         <span>&#8592;</span> Volver a la lista de roles
@@ -396,8 +388,6 @@
             </div>
         </form>
     </section>
-
-    <p class="pie">Sistema de Gimnasio &middot; Gestión de roles (F21)</p>
 </main>
 
 <script>
