@@ -111,3 +111,6 @@ INSERT INTO MARCACION_ACCESO (id_marcacion, id_cliente, id_suscripcion, id_usuar
                                                                                                                                                 (9002, 503, 1003, 203, 1, '10293847', '2026-10-12 09:05:40', 'PERMITIDO', 'Suscripción vigente en su sede'),
                                                                                                                                                 (9003, 501, 1001, 203, 1, '72839401', '2026-10-12 18:20:03', 'DENEGADO', 'Suscripción vencida'),
                                                                                                                                                 (9004, NULL, NULL, 203, 1, '99887766', '2026-10-12 18:25:31', 'DENEGADO', 'DNI no registrado');
+
+-- Las marcaciones nuevas (I15) deben continuar después de los registros de ejemplo.
+ALTER TABLE MARCACION_ACCESO ALTER COLUMN id_marcacion RESTART WITH 9005;
