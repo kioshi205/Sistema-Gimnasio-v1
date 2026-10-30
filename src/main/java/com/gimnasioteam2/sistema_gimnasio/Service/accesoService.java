@@ -2,7 +2,7 @@ package com.gimnasioteam2.sistema_gimnasio.Service;
 
 import com.gimnasioteam2.sistema_gimnasio.Model.Cliente;
 import com.gimnasioteam2.sistema_gimnasio.Model.ResultadoConsultaAcceso;
-import com.gimnasioteam2.sistema_gimnasio.Model.Sede;
+import com.gimnasioteam2.sistema_gimnasio.Model.SedeG;
 import com.gimnasioteam2.sistema_gimnasio.Model.Suscripcion;
 import com.gimnasioteam2.sistema_gimnasio.Repository.accesoRepository;
 import org.springframework.stereotype.Service;
@@ -20,11 +20,11 @@ public class accesoService {
         this.acceso_Repository = acceso_Repository;
     }
 
-    public List<Sede> obtenerSedesActivas() {
+    public List<SedeG> obtenerSedesActivas() {
         return acceso_Repository.listarSedesActivas();
     }
 
-    public Sede obtenerSedeActiva(int idSede) {
+    public SedeG obtenerSedeActiva(int idSede) {
         return acceso_Repository.buscarSedeActivaPorId(idSede);
     }
 
@@ -37,7 +37,7 @@ public class accesoService {
      * la marcación en MARCACION_ACCESO, sea permitida o denegada.
      */
     public ResultadoConsultaAcceso consultarAcceso(String dni, int idSede, int idUsuario) {
-        Sede sede = acceso_Repository.buscarSedeActivaPorId(idSede);
+        SedeG sede = acceso_Repository.buscarSedeActivaPorId(idSede);
         if (sede == null) {
             throw new IllegalArgumentException("La sede seleccionada no es válida.");
         }

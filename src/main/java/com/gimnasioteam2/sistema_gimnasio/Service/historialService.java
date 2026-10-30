@@ -1,7 +1,7 @@
 package com.gimnasioteam2.sistema_gimnasio.Service;
 
 import com.gimnasioteam2.sistema_gimnasio.Model.MarcacionAcceso;
-import com.gimnasioteam2.sistema_gimnasio.Model.Sede;
+import com.gimnasioteam2.sistema_gimnasio.Model.SedeG;
 import com.gimnasioteam2.sistema_gimnasio.Repository.historialRepository;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +24,7 @@ public class historialService {
         return historial_Repository.consultarHistorial(fechaDesde, fechaHasta, idSede, resultado);
     }
 
-    public List<Sede> obtenerSedes() {
+    public List<SedeG> obtenerSedes() {
         return historial_Repository.listarSedes();
     }
 }

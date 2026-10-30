@@ -1,7 +1,7 @@
 package com.gimnasioteam2.sistema_gimnasio.Repository;
 
 import com.gimnasioteam2.sistema_gimnasio.Model.Cliente;
-import com.gimnasioteam2.sistema_gimnasio.Model.Sede;
+import com.gimnasioteam2.sistema_gimnasio.Model.SedeG;
 import com.gimnasioteam2.sistema_gimnasio.Model.Suscripcion;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -15,7 +15,7 @@ public class accesoRepository {
 
     private final JdbcTemplate jdbcTemplate;
 
-    private final RowMapper<Sede> filaSede = (rs, numeroFila) -> new Sede(
+    private final RowMapper<SedeG> filaSede = (rs, numeroFila) -> new SedeG(
             rs.getInt("id_sede"),
             rs.getString("nombre_sede"),
             rs.getString("direccion")
@@ -49,16 +49,16 @@ public class accesoRepository {
     }
 
     /** Sedes disponibles para indicar dónde está el guardia. */
-    public List<Sede> listarSedesActivas() {
+    public List<SedeG> listarSedesActivas() {
         String sql = "SELECT id_sede, nombre_sede, direccion FROM SEDE "
                 + "WHERE UPPER(estado) = 'ACTIVO' ORDER BY nombre_sede";
         return jdbcTemplate.query(sql, filaSede);
     }
 
-    public Sede buscarSedeActivaPorId(int idSede) {
+    public SedeG buscarSedeActivaPorId(int idSede) {
         String sql = "SELECT id_sede, nombre_sede, direccion FROM SEDE "
                 + "WHERE id_sede = ? AND UPPER(estado) = 'ACTIVO'";
-        List<Sede> resultados = jdbcTemplate.query(sql, filaSede, idSede);
+        List<SedeG> resultados = jdbcTemplate.query(sql, filaSede, idSede);
         return resultados.isEmpty() ? null : resultados.get(0);
     }
 

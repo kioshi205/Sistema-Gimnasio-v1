@@ -1,6 +1,6 @@
 package com.gimnasioteam2.sistema_gimnasio.Controller;
 
-import com.gimnasioteam2.sistema_gimnasio.Model.Rol;
+import com.gimnasioteam2.sistema_gimnasio.Model.RolG;
 import com.gimnasioteam2.sistema_gimnasio.Service.rolService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,7 +33,7 @@ public class rolController {
     public String mostrarFormularioEdicion(@PathVariable int idRol,
                                            Model model,
                                            RedirectAttributes redirectAttributes) {
-        Rol rol = rol_Service.obtenerRolPorId(idRol);
+        RolG rol = rol_Service.obtenerRolPorId(idRol);
 
         if (rol == null) {
             redirectAttributes.addFlashAttribute("mensajeError", "El rol indicado no existe.");

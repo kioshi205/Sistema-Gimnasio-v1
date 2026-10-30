@@ -1,7 +1,7 @@
 package com.gimnasioteam2.sistema_gimnasio.Repository;
 
 import com.gimnasioteam2.sistema_gimnasio.Model.MarcacionAcceso;
-import com.gimnasioteam2.sistema_gimnasio.Model.Sede;
+import com.gimnasioteam2.sistema_gimnasio.Model.SedeG;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -15,7 +15,7 @@ public class historialRepository {
 
     private final JdbcTemplate jdbcTemplate;
 
-    private final RowMapper<Sede> filaSede = (rs, numeroFila) -> new Sede(
+    private final RowMapper<SedeG> filaSede = (rs, numeroFila) -> new SedeG(
             rs.getInt("id_sede"),
             rs.getString("nombre_sede"),
             rs.getString("direccion")
@@ -89,7 +89,7 @@ public class historialRepository {
     }
 
     /** Todas las sedes, para poder filtrar también registros históricos. */
-    public List<Sede> listarSedes() {
+    public List<SedeG> listarSedes() {
         String sql = "SELECT id_sede, nombre_sede, direccion FROM SEDE ORDER BY nombre_sede";
         return jdbcTemplate.query(sql, filaSede);
     }

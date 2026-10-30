@@ -3,16 +3,16 @@ package com.gimnasioteam2.sistema_gimnasio.Model;
 /**
  * Sede del gimnasio (tabla SEDE).
  */
-public class Sede {
+public class SedeG {
 
     private int idSede;
     private String nombreSede;
     private String direccion;
 
-    public Sede() {
+    public SedeG() {
     }
 
-    public Sede(int idSede, String nombreSede, String direccion) {
+    public SedeG(int idSede, String nombreSede, String direccion) {
         this.idSede = idSede;
         this.nombreSede = nombreSede;
         this.direccion = direccion;

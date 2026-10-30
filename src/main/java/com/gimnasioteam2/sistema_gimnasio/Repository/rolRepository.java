@@ -1,6 +1,7 @@
 package com.gimnasioteam2.sistema_gimnasio.Repository;
 
-import com.gimnasioteam2.sistema_gimnasio.Model.Rol;
+//import com.gimnasioteam2.sistema_gimnasio.Model.Rol;
+import com.gimnasioteam2.sistema_gimnasio.Model.RolG;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -12,7 +13,7 @@ public class rolRepository {
 
     private final JdbcTemplate jdbcTemplate;
 
-    private final RowMapper<Rol> filaRol = (rs, numeroFila) -> new Rol(
+    private final RowMapper<RolG> filaRol = (rs, numeroFila) -> new RolG(
             rs.getInt("id_rol"),
             rs.getString("nombre_rol"),
             rs.getString("descripcion")
@@ -23,14 +24,14 @@ public class rolRepository {
     }
 
     /** F20: obtiene los roles fijos registrados en la tabla ROL. */
-    public List<Rol> listarRoles() {
+    public List<RolG> listarRoles() {
         String sql = "SELECT id_rol, nombre_rol, descripcion FROM ROL ORDER BY id_rol";
         return jdbcTemplate.query(sql, filaRol);
     }
 
-    public Rol buscarPorId(int idRol) {
+    public RolG buscarPorId(int idRol) {
         String sql = "SELECT id_rol, nombre_rol, descripcion FROM ROL WHERE id_rol = ?";
-        List<Rol> resultados = jdbcTemplate.query(sql, filaRol, idRol);
+        List<RolG> resultados = jdbcTemplate.query(sql, filaRol, idRol);
         return resultados.isEmpty() ? null : resultados.get(0);
     }
 

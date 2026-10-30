@@ -1,6 +1,7 @@
 package com.gimnasioteam2.sistema_gimnasio.Service;
 
-import com.gimnasioteam2.sistema_gimnasio.Model.Rol;
+//import com.gimnasioteam2.sistema_gimnasio.Model.Rol;
+import com.gimnasioteam2.sistema_gimnasio.Model.RolG;
 import com.gimnasioteam2.sistema_gimnasio.Repository.rolRepository;
 import org.springframework.stereotype.Service;
 
@@ -18,11 +19,11 @@ public class rolService {
         this.rol_Repository = rol_Repository;
     }
 
-    public List<Rol> obtenerRoles() {
+    public List<RolG> obtenerRoles() {
         return rol_Repository.listarRoles();
     }
 
-    public Rol obtenerRolPorId(int idRol) {
+    public RolG obtenerRolPorId(int idRol) {
         return rol_Repository.buscarPorId(idRol);
     }
 

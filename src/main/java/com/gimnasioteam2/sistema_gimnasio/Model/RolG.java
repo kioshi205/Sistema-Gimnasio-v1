@@ -3,16 +3,16 @@ package com.gimnasioteam2.sistema_gimnasio.Model;
 /**
  * Representa un perfil de acceso del sistema (tabla ROL).
  */
-public class Rol {
+public class RolG {
 
     private int idRol;
     private String nombreRol;
     private String descripcion;
 
-    public Rol() {
+    public RolG() {
     }
 
-    public Rol(int idRol, String nombreRol, String descripcion) {
+    public RolG(int idRol, String nombreRol, String descripcion) {
         this.idRol = idRol;
         this.nombreRol = nombreRol;
         this.descripcion = descripcion;
