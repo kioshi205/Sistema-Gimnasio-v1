@@ -79,6 +79,35 @@
             justify-content: flex-end;
         }
 
+        .nav-modulo {
+            display: flex;
+            gap: 4px;
+            padding: 4px;
+            background: var(--cyan-50);
+            border: 1px solid var(--cyan-100);
+            border-radius: 999px;
+        }
+
+        .nav-modulo a {
+            padding: 7px 14px;
+            border-radius: 999px;
+            color: var(--cyan-700);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 700;
+            transition: all 0.15s ease;
+        }
+
+        .nav-modulo a:hover {
+            background: var(--blanco);
+        }
+
+        .nav-modulo a.activo {
+            background: var(--cyan-500);
+            color: var(--blanco);
+            box-shadow: 0 4px 10px rgba(6, 182, 212, 0.28);
+        }
+
         .distintivo {
             background: var(--cyan-50);
             border: 1px solid var(--cyan-100);
@@ -89,6 +118,7 @@
             text-transform: uppercase;
             padding: 7px 14px;
             border-radius: 999px;
+            white-space: nowrap;
         }
 
         .guardia {
@@ -635,6 +665,10 @@
         <span>GymTeam</span>
     </div>
     <div class="barra-derecha">
+        <nav class="nav-modulo">
+            <a class="activo" href="${pageContext.request.contextPath}/acceso">Consulta</a>
+            <a href="${pageContext.request.contextPath}/historial">Historial</a>
+        </nav>
         <span class="distintivo">Módulo Seguridad</span>
         <div class="guardia">
             <span class="guardia-avatar">S</span>
